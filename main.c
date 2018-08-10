@@ -26,37 +26,8 @@ int list_size(struct ListNode* list)
     }
     return size + 1;
 }
-// disabuse
-//数组
-//指针
-//二维数组
-//二级指针
-//数组指针
-//指针数组
-//函数形参中
 int main()
 {
-    int a[] = {1, 2, 3};
-    int *b = a;
-    for(int i = 0; i < sizeof(a) / sizeof(a[0]); i++)
-    {
-        printf("%d ", a[i]);
-    }
-    printf("\n");
-    for(int i = 0; i < sizeof(a) / sizeof(a[0]); i++)
-    {
-        printf("%d ", b[i]);
-    }
-    printf("\n");
-    for(int i = 0; i < sizeof(a) / sizeof(a[0]); i++)
-    {
-        printf("%d ", *a++);
-    }
-    printf("\n");
-    for(int i = 0; i < sizeof(a) / sizeof(a[0]); i++)
-    {
-        printf("%d ", *b++);
-    }
 
     return 0;
 }
