@@ -1,33 +1,34 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "ArrayList.h"
 
-struct ListNode {
-    int val;
-    struct ListNode *next;
-};
-
-typedef struct ListNode *List;
-typedef struct ListNode *ListPosition;
-
-void initList(List *list)
+void arrayListPrint(ArrayList list)
 {
-    *list = malloc(sizeof(struct ListNode));
-    (*list)->next = NULL;
-}
-
-
-int list_size(struct ListNode* list)
-{
-    int size = 0;
-    while(list->next)
+    printf("[");
+    if(list->length == 0);
+    else
     {
-        size++;
-        list = list->next;
+        int *tmp = arrayListGetVal(list, 0);
+        printf("%d", *tmp);
+        for(int i = 1; i < arrayListlength(list); i++)
+        {
+            tmp = arrayListGetVal(list, i);
+            printf(",%d", *tmp);
+        }
     }
-    return size + 1;
+    printf("]\n");
+
 }
 int main()
 {
+   ArrayList list;
+   arrayListInit(&list);
 
+   int num[20] = {0,1,2,3,4,5,6,7,8,9};
+   for(int i = 0; i < 2; i++)
+   {
+       arrayListAdd(list, &i);
+   }
+   arrayListPrint(list);
     return 0;
 }
