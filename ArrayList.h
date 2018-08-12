@@ -26,16 +26,17 @@ void arrayListInit(ArrayList *list);
 
 void arrayListClear(ArrayList list);
 
+void arrayListDestory(ArrayList *list);
+
 void arrayListInsert(ArrayList list, int index, void * data);
 
 void arrayListRemove(ArrayList list, int index);
 
 void arrayListAdd(ArrayList list, void * data);
 
-void arrayListGet(ArrayList list, int index, void **data);
+void* arrayListGet(ArrayList list, int index);
 
-void* arrayListGetVal(ArrayList list, int index);
-
+void arrayListSet(ArrayList list, int index, void *data);
 
 #define arrayListSize(list) (list->listSize)
 #define arrayListlength(list) (list->length)

@@ -40,6 +40,7 @@ void checkInsertIndex(ArrayList list, int index)
 }
 void arrayListInit(ArrayList *list)
 {
+    checkNullPointer(list);
     *list = malloc(sizeof(struct ArrayList_));
     (*list)->node = malloc(DEFAULT_LIST_SIZE * sizeof(struct Node_));
     if(!(*list)->node) exit(0);
@@ -48,7 +49,21 @@ void arrayListInit(ArrayList *list)
 }
 void arrayListClear(ArrayList list)
 {
-
+    if(list)
+    {
+        memset(list->node, 0, list->length * sizeof(struct Node_));
+        list->length = 0;
+        //list->listSize = DEFAULT_LIST_SIZE;
+    }
+}
+void arrayListDestory(ArrayList *list)
+{
+    if(list)
+    {
+        free((*list)->node);
+        free(*list);
+        *list = NULL;
+    }
 }
 void arrayListInsert(ArrayList list, int index, void * data)
 {
@@ -78,9 +93,21 @@ void arrayListInsert(ArrayList list, int index, void * data)
 }
 void arrayListRemove(ArrayList list, int index)
 {
-    checkNullPointer(list);
     checkIndex(list, index);
-    //TODO
+    for(int k = index; k < list->length; k++)
+    {
+         memcpy(list->node + k, list->node + k + 1, sizeof(struct Node_));
+    }
+    list->length--;
+
+    //reduce capacity
+    if(list->length > DEFAULT_LIST_SIZE && list->length < list->listSize / 2)
+    {
+        for(Node tmp = list->node + list->listSize / 2; tmp < list->node + list->listSize; tmp++)
+            free(tmp);
+        list->listSize /= 2;
+        list->node = realloc(list->node, list->listSize * sizeof(struct Node_));
+    }
 }
 void arrayListAdd(ArrayList list, void * data)
 {
@@ -88,16 +115,14 @@ void arrayListAdd(ArrayList list, void * data)
     arrayListInsert(list, list->length , data);
 }
 
-void arrayListGet(ArrayList list, int index, void **data)
+void* arrayListGet(ArrayList list, int index)
 {
-    checkNullPointer(list);
-    checkIndex(list, index);
-    void *val = (list->node + index)->elem;
-    *data = val;
-}
-void* arrayListGetVal(ArrayList list, int index)
-{
-    checkNullPointer(list);
     checkIndex(list, index);
     return (list->node + index)->elem;
+}
+
+void arrayListSet(ArrayList list, int index, void *data)
+{
+    checkIndex(list, index);
+    memcpy((list->node + index)->elem, data, sizeof(void *));
 }
