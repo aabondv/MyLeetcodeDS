@@ -1,12 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
-//#include "ArrayList.h"
+#include "ArrayList.h"
 #include "LinkedList.h"
 
 int main()
 {
+
+//    fprintf(stdout, "----------ArrayList Test---------");
 //    ArrayListTest();
-    LinkedList list;
-   checkNullPointer(list->val);
-   return 0;
+//    fprintf(stdout, "----------LinkedList Test---------");
+//    LinkedListTest();
+
+    return 0;
 }
