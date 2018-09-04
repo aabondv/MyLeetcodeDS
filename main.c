@@ -3,21 +3,26 @@
 #include "ArrayList.h"
 #include "LinkedList.h"
 #include "BinaryTree.h"
+#include "HashTable.h"
 int main()
 {
 
-//    fprintf(stdout, "----------ArrayList Test---------");
+//    fprintf(stdout, "----------Start ArrayList Test---------\n");
 //    ArrayListTest();
-//    fprintf(stdout, "----------LinkedList Test---------");
+//    fprintf(stdout, "----------End   ArrayList Test---------\n");
+
+//    fprintf(stdout, "----------Start LinkedList Test---------\n");
 //    LinkedListTest();
-    int a[] = {0, 1, 2, 3, -1, -1, 4};
-    BiTree tree;
-    binaryTreeInit(&tree, a, 0, ArraySize(a));
-    binaryTreePreOrderTraverse(tree);
-    fprintf(stdout, "\n");
-    binaryTreeInOrderTraverse(tree);
-    fprintf(stdout, "\n");
-    binaryTreePostOrderTraverse(tree);
-    fprintf(stdout, "\n");
+//    fprintf(stdout, "----------End   LinkedList Test---------\n");
+
+//    fprintf(stdout, "----------Start BinaryTree Test---------\n");
+//    binaryTreeTest();
+//    fprintf(stdout, "----------End   BinaryTree Test---------\n");
+
+//    fprintf(stdout, "----------Start HashTable Test---------\n");
+//    hashTableTest();
+//    fprintf(stdout, "----------End   HashTable Test---------\n");
+
+
     return 0;
 }

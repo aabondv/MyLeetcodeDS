@@ -106,6 +106,20 @@ int linkedListGet(LinkedList list, int index)
     return list->val;
 }
 
+int linkedListGetIndex(LinkedList list, int val)
+{
+    checkNullPointer(list);
+    int index = 0;
+    while(list)
+    {
+        if(list->val == val) return index;
+        else list = list->next;
+        index++;
+    }
+    return -1;
+
+}
+
 void linkedListPrint(LinkedList list)
 {
     fprintf(stdout, "length:%3d: [", linkedListSize(list));

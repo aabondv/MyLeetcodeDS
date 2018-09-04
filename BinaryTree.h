@@ -24,4 +24,5 @@ void binaryTreeInOrderTraverse(BiTree tree);
 
 void binaryTreePostOrderTraverse(BiTree tree);
 
+void binaryTreeTest();
 #endif // BINARYTREE_H

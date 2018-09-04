@@ -38,6 +38,8 @@ void* arrayListGet(ArrayList list, int index);
 
 void arrayListSet(ArrayList list, int index, void *data);
 
+void arrayListSort(ArrayList list);
+
 #define arrayListSize(list) (list->listSize)
 #define arrayListlength(list) (list->length)
 #define arrayListIsEmpty(list) (list->length == 0)

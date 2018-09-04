@@ -9,12 +9,21 @@ struct ListNode{
 typedef struct ListNode *LinkedList;
 typedef struct ListNode *ListNode;
 
+
 void linkedListInit(LinkedList *list);
+
 void linkedListInsert(LinkedList *list, int index, int val);
+
 void linkedListAdd(LinkedList list, int val);
+
 void linkedListRemove(LinkedList *list, int index);
+
 int linkedListSize(LinkedList list);
+
 int linkedListGet(LinkedList list, int index);
+
+int linkedListGetIndex(LinkedList list, int val);
+
 void linkedListSet(LinkedList list, int index, int val);
 
 

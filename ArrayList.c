@@ -13,7 +13,7 @@ void checkIndex(ArrayList list, int index)
     }
     else if(index < 0 || index >= arrayListlength(list))
     {
-        fprintf(stderr, "index shoudle between 0 and %d: \n", arrayListlength(list) - 1, index);
+        fprintf(stderr, "input %d, index shoudle be between 0 and %d: \n", index, arrayListlength(list) - 1);
         exit(0);
     }
 }
@@ -27,7 +27,7 @@ void checkInsertIndex(ArrayList list, int index)
     }
     else if(index < 0 || index > arrayListlength(list))
     {
-        fprintf(stderr, "input error %d, insert before index, shoudle between 0 and %d\n", index, arrayListlength(list));
+        fprintf(stderr, "input error: %d, inserting before index shoudle be between 0 and %d\n", index, arrayListlength(list));
         exit(0);
     }
 }
@@ -164,5 +164,4 @@ void ArrayListTest()
    arrayListPrint(list);
 
    arrayListDestory(&list);
-   arrayListPrint(list);
 }
